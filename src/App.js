@@ -20,6 +20,9 @@ function App() {
   const addNum = (number) => {
     setClickValue(clickValue => clickValue + number);
   };
+  const addOperator = (operator) => {
+    setClickValue(clickValue => ` ${clickValue} + ${operator} + `)
+  }
 
   return (
     <div className="container">
@@ -28,7 +31,7 @@ function App() {
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display number={clickValue} />
         <Numbers addNum={addNum} />
-        <Operators />
+        <Operators addOperator={addOperator} />
         <Specials />
       </div>
     </div>
